@@ -1,12 +1,3 @@
-declare global {
-  interface Array<T> {
-    myFilter(
-      callbackFn: (value: T, index: number, array: Array<T>) => boolean,
-      thisArg?: unknown,
-    ): Array<T>;
-  }
-}
-
 Array.prototype.myFilter = function (callbackFn, thisArg) {
   const len = this.length;
   const results = [];
