@@ -1,7 +1,8 @@
 const SUBMIT_URL =
   "https://questions.greatfrontend.com/api/questions/contact-form";
 
-async function submitForm(event) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function submitForm(event: any) {
   event.preventDefault();
   const form = event.target;
 
@@ -31,8 +32,8 @@ async function submitForm(event) {
 
     const text = await response.text();
     alert(text);
-  } catch (_) {
-    alert("Error submitting form!");
+  } catch (error) {
+    alert("Error submitting form!" + error);
   }
 }
 
