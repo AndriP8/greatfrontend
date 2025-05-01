@@ -4,9 +4,6 @@ declare global {
       callbackFn: (value: T, index: number, array: Array<T>) => boolean,
       thisArg?: unknown,
     ): Array<T>;
-  }
-
-  interface Array<T> {
     myReduce<U>(
       callbackFn: (
         previousValue: U,
@@ -16,5 +13,9 @@ declare global {
       ) => U,
       initialValue?: U,
     ): U;
+  }
+
+  interface Function {
+    myBind(this: Function, thisArg: unknown, ...argArray: unknown[]): Function;
   }
 }
